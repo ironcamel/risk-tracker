@@ -1,0 +1,18 @@
+{
+  "name": "risk-tracker",
+  "version": "1.0.0",
+  "description": "a risk tracker",
+  "main": "app.js",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-resource": "^1.5.8",
+    "express": "^4.14.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "contributors": [
+    "Naveed Massjouni <naveed@vt.edu> (https://github.com/ironcamel)"
+  ]
+}
