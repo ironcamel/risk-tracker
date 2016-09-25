@@ -9,16 +9,18 @@
   </head>
   <body ng-controller="RisksCtrl as risks">
     <div class="container">
-      <h1>Risks:</h1>
+      <h1>Risk Tracker</h1>
+      <div ng-if="risks.risks.length">
+        <h2>Risks:</h2>
 
-      <ul>
-        <li ng-repeat="risk in risks.risks">
-          <p>{{risk.desc}}</p>
-        </li>
-      </ul>
+        <ul>
+          <li ng-repeat="risk in risks.risks">
+            <p>{{risk.desc}}</p>
+          </li>
+        </ul>
+      </div>
 
       <div class="form-group">
-        <label for="riskInp">Risk</label>
         <input ng-model="risks.riskDesc" type="text" class="form-control" id="riskInp"
           placeholder="Risk description">
       </div>

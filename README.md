@@ -1,7 +1,7 @@
 
 ## Getting Started
 
-    apt install nodejs npm
+    sudo apt-get install nodejs npm mongodb-org
     npm install
     nodejs app.js
 
