@@ -4,20 +4,20 @@
 var app = angular.module('RiskTracker', []);
 app.controller('RisksCtrl', RisksCtrl);
 
-RisksCtrl.$inject = ['$scope', '$http'];
-function RisksCtrl($scope, $http) {
+function RisksCtrl($http) {
 
-  $scope.risks = [];
-  $scope.riskDesc = '';
+  this.risks = [];
+  this.riskDesc = '';
 
+  var _this = this;
   $http.get('/api/risks').then(function(response) {
-    $scope.risks = response.data.risks;
+    _this.risks = response.data.risks;
   });
 
-  $scope.addRisk = function() {
-    var desc = $scope.riskDesc.trim();
+  this.addRisk = function() {
+    var desc = this.riskDesc.trim();
     if (desc) {
-      $scope.risks.push({ desc: desc });
+      this.risks.push({ desc: desc });
     }
   };
 
