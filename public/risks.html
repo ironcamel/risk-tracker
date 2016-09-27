@@ -15,7 +15,7 @@
 
         <ul>
           <li ng-repeat="risk in risks.risks">
-            <p>{{risk.desc}}</p>
+            <p ng-bind="risk.desc"></p>
           </li>
         </ul>
       </div>
