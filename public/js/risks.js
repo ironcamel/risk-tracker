@@ -1,8 +1,28 @@
 (function() {
 'use strict';
 
-var app = angular.module('RiskTracker', []);
+var app = angular.module('RiskTracker', ['ngRoute']);
+app.controller('MainCtrl', RisksCtrl);
 app.controller('RisksCtrl', RisksCtrl);
+
+app.config(function($routeProvider) {
+  $routeProvider
+  .when('/', {
+      templateUrl : '/home.html',
+      controller  : 'MainCtrl'
+  })
+  .when('/about', {
+      templateUrl : '/about.html',
+      controller  : 'MainCtrl'
+  })
+  .when('/risks', {
+      templateUrl : '/risks.html',
+      controller  : 'RisksCtrl as risks'
+  });
+});
+
+function MainCtrl($http) {
+}
 
 function RisksCtrl($http) {
 

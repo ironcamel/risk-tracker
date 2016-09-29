@@ -18,10 +18,6 @@ MongoClient.connect(mongo_url, (err, database) => {
   });
 });
 
-app.get('/', (req, res) => {
-  res.redirect('/risks.html');
-});
-
 app.get('/api/risks', (req, res) => {
   db.collection('risks').find().toArray((err, results) => {
     res.json({ risks: results });

@@ -1,38 +1,23 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="RiskTracker">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Risk Tracker</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  </head>
-  <body ng-controller="RisksCtrl as risks">
-    <div class="container">
-      <h1>Risk Tracker</h1>
+<h1>Risks </h1>
 
-      <div class="row">
-        <div class="col-md-11">
-          <input ng-model="risks.riskDesc" type="text" class="form-control col-md-6" id="riskInp" placeholder="description">
-        </div>
-        <button ng-click="risks.addRisk()" type="button" class="btn btn-default">
-          Add
-        </button>
-      </div>
+<div class="row">
+  <div class="col-md-11">
+    <input ng-model="risks.riskDesc" type="text" class="form-control col-md-6" id="riskInp" placeholder="description">
+  </div>
+  <div class="col-md-1">
+    <button ng-click="risks.addRisk()" type="button" class="btn btn-default">
+      Add
+    </button>
+  </div>
+</div>
 
-      <br>
+<br>
 
-      <table class="table table-striped">
-        <tbody>
-          <tr ng-repeat="risk in risks.risks">
-            <td ng-bind="risk.desc">Loading risks ...</td>
-          </tr>
-        </tbody>
-      </table>
+<table class="table table-striped">
+  <tbody>
+    <tr ng-repeat="risk in risks.risks">
+      <td ng-bind="risk.desc">Loading risks ...</td>
+    </tr>
+  </tbody>
+</table>
 
-    </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-    <script src="/js/risks.js"></script>
-  </body>
-</html>
