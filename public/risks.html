@@ -10,24 +10,25 @@
   <body ng-controller="RisksCtrl as risks">
     <div class="container">
       <h1>Risk Tracker</h1>
-      <div ng-if="risks.risks.length">
-        <h2>Risks:</h2>
 
-        <ul>
-          <li ng-repeat="risk in risks.risks">
-            <p ng-bind="risk.desc"></p>
-          </li>
-        </ul>
+      <div class="row">
+        <div class="col-md-11">
+          <input ng-model="risks.riskDesc" type="text" class="form-control col-md-6" id="riskInp" placeholder="description">
+        </div>
+        <button ng-click="risks.addRisk()" type="button" class="btn btn-default">
+          Add
+        </button>
       </div>
 
-      <div class="form-group">
-        <input ng-model="risks.riskDesc" type="text" class="form-control" id="riskInp"
-          placeholder="Risk description">
-      </div>
+      <br>
 
-      <button ng-click="risks.addRisk()" type="button" class="btn btn-default">
-        Add
-      </button>
+      <table class="table table-striped">
+        <tbody>
+          <tr ng-repeat="risk in risks.risks">
+            <td ng-bind="risk.desc">Loading risks ...</td>
+          </tr>
+        </tbody>
+      </table>
 
     </div>
 

@@ -21,6 +21,7 @@ function RisksCtrl($http) {
     var data = { desc: desc };
     $http.post('/api/risks', data).then(function(res) {
       me.risks.push(data);
+      me.riskDesc = '';
     });
   };
 
